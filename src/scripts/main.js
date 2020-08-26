@@ -2,8 +2,10 @@ import "./components/app-main-content-list.js"
 import "./components/app-main-content-search.js"
 
 function main() {
+
     // Element
     const inputSearchElement = document.querySelector("#search");
+    const detailFilmModalElement = document.querySelector("#detail-film-modal");
 
     const baseUrl = "https://api.themoviedb.org/3/";
     const apiKey = "?api_key=ab72e946e2982c87dddc81279ced2ea0"
@@ -95,9 +97,13 @@ function main() {
         // document.getElementById("content").appendChild(mainContentListElement);
 
         const buttons = document.querySelectorAll(".hoverable");
+
         buttons.forEach(button => {
             button.addEventListener("click", event => {
-                alert('hellow');
+                // $('.detail-film-modal').modal('show');
+                $('#detail-film-modal').modal('show');
+
+                // alert('hellow');
                 // const movieId = event.target.id;
                 // removeBook(movieId);
             })
@@ -115,9 +121,6 @@ function main() {
                 searchMovieByName(inputSearchElement.value);
             }
         });
-
-        var elems = document.querySelectorAll('.modal');
-        var instances = M.Modal.init(elems, options);
 
         getPopularMovie();
     });
