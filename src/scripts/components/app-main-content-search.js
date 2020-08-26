@@ -5,14 +5,13 @@ class AppMainContentSearch extends HTMLElement {
     }
 
     render() {
-        console.log(this._movies);
         let div = '';
 
         let i = 0;
         let j = 2;
         this._movies.forEach(movie => {
             const fullImageUrl = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
-            const movieDescription = (movie.overview).substring(0, 250) + ".... Read more";
+            const movieDescription = (movie.overview).substring(0, 250) + ".... <b>Read more<b>";
 
             if (i % 3 === 0 || i == 0) div += "<div class='row'>";
             div += `
