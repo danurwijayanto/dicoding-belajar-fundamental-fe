@@ -110,35 +110,14 @@ function main() {
 
     document.addEventListener("DOMContentLoaded", () => {
 
-        // const inputBookId = document.querySelector("#inputBookId");
-        // const inputBookTitle = document.querySelector("#inputBookTitle");
-        // const inputBookAuthor = document.querySelector("#inputBookAuthor");
-        // const buttonSave = document.querySelector("#buttonSave");
-        // const buttonUpdate = document.querySelector("#buttonUpdate");
-
-        // buttonSave.addEventListener("click", function () {
-        //     const book = {
-        //         id: Number.parseInt(inputBookId.value),
-        //         title: inputBookTitle.value,
-        //         author: inputBookAuthor.value
-        //     };
-        //     insertBook(book)
-        // });
-
-        // buttonUpdate.addEventListener("click", function () {
-        //     const book = {
-        //         id: Number.parseInt(inputBookId.value),
-        //         title: inputBookTitle.value,
-        //         author: inputBookAuthor.value
-        //     };
-
-        //     updateBook(book)
-        // });
         inputSearchElement.addEventListener("keypress", function(e) {
             if (e.key === 'Enter' || e.keyCode === 13) {
                 searchMovieByName(inputSearchElement.value);
             }
         });
+
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems, options);
 
         getPopularMovie();
     });
