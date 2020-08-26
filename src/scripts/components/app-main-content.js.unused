@@ -1,0 +1,23 @@
+class AppMainContent extends HTMLElement {
+    set movie(movie) {
+        this._movie = movie;
+        this.render();
+    }
+
+    render() {
+        const fullImageUrl = "https://image.tmdb.org/t/p/w500" + this._movie.poster_path
+        const movieDescription = (this._movie.overview).substring(0, 250) + ".... Read more";
+        this.innerHTML += `
+            <div class="col s4 m4">
+            <div class="icon-block">
+            <img class="responsive-img" src="${fullImageUrl}" alt="Fan Art">  
+                        <h5 class="center">${this._movie.name}</h5>
+
+                        <p class="light">${movieDescription}</p>
+                    </div>
+                </div>
+            `;
+    }
+}
+
+customElements.define("app-main-content", AppMainContent);
