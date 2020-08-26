@@ -100,12 +100,7 @@ function main() {
 
         buttons.forEach(button => {
             button.addEventListener("click", event => {
-                // $('.detail-film-modal').modal('show');
                 $('#detail-film-modal').modal('show');
-
-                // alert('hellow');
-                // const movieId = event.target.id;
-                // removeBook(movieId);
             })
         })
     }
